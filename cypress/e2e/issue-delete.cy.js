@@ -18,12 +18,12 @@ describe("Issue delete", () => {
         cy.get("button").contains("Delete issue").should("be.visible").click();
 
         cy.get('[data-testid="modal:confirm"]').should("not.exist");
-        getIssueDetailsModal().should("not.exist");
+        cy.get('[data-testid="modal:issue-details"]').should("not.exist");
       });
   });
 
   it("Should cancel deletion process successfully", () => {
-    getIssueDetailsModal.should("be.visible");
+    cy.get('[data-testid="modal:issue-details"]').should("be.visible");
 
     // Click the Delete Issue button
     cy.get('[data-testid="icon:trash"]').should("be.visible").click();
@@ -49,5 +49,3 @@ describe("Issue delete", () => {
     cy.get('[data-testid="list-issue"]').first().should("be.visible");
   });
 });
-const getIssueDetailsModal = () =>
-  cy.get('[data-testid="modal:issue-details"]');

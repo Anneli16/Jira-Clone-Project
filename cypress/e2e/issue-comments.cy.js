@@ -68,7 +68,7 @@ describe("Issue comments creating, editing and deleting", () => {
       .should("not.exist");
   });
 
-  it.only("Should create, edit, and delete a comment successfully", () => {
+  it("Should create, edit, and delete a comment successfully", () => {
     const comment = "TEST_COMMENT";
     const editedComment = "TEST_COMMENT_EDITED";
 
